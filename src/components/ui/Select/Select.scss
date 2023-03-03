@@ -1,5 +1,4 @@
 .select {
-	margin: 300px 0px 0px 300px;
 	&__wrapper {
 	}
 	&__blocks {
@@ -25,7 +24,6 @@
 	justify-content: space-between;
 	align-items: center;
 	border: 1px solid lightgray;
-	box-shadow: 2px 2px 2px lightgray;
 	border-radius: 5px;
 	max-width: 350px;
 	height: 70px;
@@ -99,7 +97,10 @@
 }
 
 .select__list {
-	max-width: 350px;
+	position: absolute;
+	z-index: 5;
+	width: 350px;
+	background-color: white;
 	max-height: 300px;
 	border: 1px solid lightgray;
 	box-shadow: 2px 2px 2px lightgray;
