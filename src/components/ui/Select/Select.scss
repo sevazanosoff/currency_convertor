@@ -1,0 +1,125 @@
+.select {
+	margin: 300px 0px 0px 300px;
+	&__wrapper {
+	}
+	&__blocks {
+	}
+	&__btn {
+		color: black;
+		background: transparent;
+		border: transparent;
+		transition: 0.2s ease-in;
+		&:hover {
+			transition: 0.2s ease-out;
+			transform: scale(1.1);
+		}
+		&:visited {
+			background: transparent;
+			border: transparent;
+		}
+	}
+}
+
+.select__block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid lightgray;
+	box-shadow: 2px 2px 2px lightgray;
+	border-radius: 5px;
+	max-width: 350px;
+	height: 70px;
+	padding: 0 15px;
+	cursor: text;
+	&-about {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+	&-btns {
+		display: flex;
+		justify-content: space-between;
+		width: 40px;
+	}
+	&-image {
+		width: 30px;
+		max-height: 30px;
+		// background-repeat: no-repeat;
+		// background-position: center center;
+	}
+
+	&-title {
+		font-size: 22px;
+		text-align: center;
+	}
+	&-input {
+		border: transparent;
+		cursor: pointer;
+		&:focus {
+			border: transparent;
+			outline: none;
+		}
+	}
+	&-open {
+		background-image: url('./icons8-down-arrow-16.png');
+		width: 16px;
+		height: 16px;
+		transition: 0.3s ease;
+		cursor: pointer;
+		&-active {
+			transform: rotate(180deg);
+			transition: 0.3s ease;
+			&:hover {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	&-close {
+		visibility: hidden;
+		background-image: url('./icons8-close-16.png');
+		width: 16px;
+		height: 16px;
+	}
+	&-active {
+		border: 2px solid blue;
+		box-shadow: 2px 2px 2px lightblue;
+	}
+	&:hover {
+		.select__block-close {
+			background-image: url('./icons8-close-16.png');
+			width: 16px;
+			height: 16px;
+			visibility: visible;
+			cursor: pointer;
+		}
+	}
+}
+.active-close {
+	visibility: visible;
+}
+
+.select__list {
+	max-width: 350px;
+	max-height: 300px;
+	border: 1px solid lightgray;
+	box-shadow: 2px 2px 2px lightgray;
+	border-radius: 5px;
+	overflow-y: scroll;
+	&-item {
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		transition: 0.2s ease-in;
+		&:hover {
+			transition: 0.2s ease-out;
+			background-color: rgba($color: lightgray, $alpha: 0.5);
+		}
+		&-active {
+			background-color: rgba($color: lightgray, $alpha: 0.3);
+		}
+	}
+	&-about {
+		@extend .select__block-about;
+		padding-right: 15px;
+	}
+}

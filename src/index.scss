@@ -1,0 +1,15 @@
+@import './scss/variable.module.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background: #fff;
+	color: #222;
+	font-family: $fontFamily;
+	font-weight: 300;
+}
