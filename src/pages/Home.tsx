@@ -2,9 +2,6 @@ import React from 'react'
 
 import { fetchCurrency } from '../redux/currency/currencyAsyncActions'
 import { useAppDispatch, useAppSelector } from '../redux/store/store'
-import { Select } from '../components/ui/Select/Select'
-import { Input } from '../components/ui/Input/Input'
-import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 
 import '../scss/pages/Home.scss'
@@ -32,17 +29,8 @@ const Home = () => {
 	return (
 		<section className='home'>
 			<div className='home__wrapper'>
-				<Header />
 				<main className='home__main'>
-					<div className='home__main-wrapper'>
-						<div className='home__block-title'>
-							<h3 className='home__main-subtitle'>Vsevolod Currency Converter</h3>
-							<h1 className='home__main-title'>
-								{/* {selectedFrom} to {selectedTo} */}
-							</h1>
-						</div>
-						<MainBlock currentArray={currentArray} />
-					</div>
+					<MainBlock currentArray={currentArray} />
 				</main>
 				<Footer />
 			</div>

@@ -47,14 +47,15 @@ const Select: React.FC<SelectProps> = ({
 	React.useEffect(() => {
 		setInputValue(selectedText)
 	}, [])
+	React.useEffect(() => {
+		setInputValue(selectedText)
+	}, [selectedText])
 
 	React.useEffect(() => {
 		const handleClick = (e: MouseEvent): void => {
 			if (!selectRef.current) return
 			if (!selectRef.current.contains(e.target as HTMLDivElement)) {
-				if (inputValue === '' || currencyArray?.length === 0) {
-					setInputValue(selectedText)
-				}
+				setInputValue(selectedText)
 				closeFocusInput()
 			}
 		}
@@ -114,35 +115,39 @@ const Select: React.FC<SelectProps> = ({
 					</div>
 					{open && (
 						<div className='select__list'>
-							{currencyArray?.map((currency, index) => (
-								<div
-									onClick={() =>
-										changeSelectedCurrency(currency.txt, currency.cc)
-									}
-									key={uuidv4()}
-									className={
-										selected === currency.cc
-											? 'select__list-item select__list-item-active'
-											: 'select__list-item'
-									}>
-									<div className='select__list-about'>
-										<img
-											className='select__block-image'
-											src={
-												currency.cc === 'EUR'
-													? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/800px-Flag_of_Europe.svg.png?20081021155534'
-													: `https://flagsapi.com/${currency.cc.slice(
-															0,
-															2,
-													  )}/flat/64.png`
-											}
-											alt='flag'
-										/>
-										<h3 className='select__block-title'>{currency.cc}</h3>
+							{currencyArray && currencyArray.length > 0 ? (
+								currencyArray?.map((currency, index) => (
+									<div
+										onClick={() =>
+											changeSelectedCurrency(currency.txt, currency.cc)
+										}
+										key={uuidv4()}
+										className={
+											selected === currency.cc
+												? 'select__list-item select__list-item-active'
+												: 'select__list-item'
+										}>
+										<div className='select__list-about'>
+											<img
+												className='select__block-image'
+												src={
+													currency.cc === 'EUR'
+														? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/800px-Flag_of_Europe.svg.png?20081021155534'
+														: `https://flagsapi.com/${currency.cc.slice(
+																0,
+																2,
+														  )}/flat/64.png`
+												}
+												alt='flag'
+											/>
+											<h3 className='select__block-title'>{currency.cc}</h3>
+										</div>
+										<p className='select__block-text'>{currency.txt}</p>
 									</div>
-									<p className='select__block-text'>{currency.txt}</p>
-								</div>
-							))}
+								))
+							) : (
+								<div className='select__empty'>Not found currency.</div>
+							)}
 						</div>
 					)}
 				</div>

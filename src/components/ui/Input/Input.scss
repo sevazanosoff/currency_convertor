@@ -23,4 +23,27 @@
 		-webkit-appearance: none;
 		margin: 0;
 	}
+
+	&__wrapper {
+		position: relative;
+	}
+	&__clear {
+		position: absolute;
+		right: 15px;
+		top: 35%;
+		background-image: url('../Select/icons8-close-16.png');
+		width: 16px;
+		height: 16px;
+		transition: 0.2s ease-in;
+		visibility: hidden;
+		opacity: 0;
+		&:hover {
+			transition: 0.2s ease-out;
+			transform: scale(1.1);
+		}
+		&-active {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
 }

@@ -1,0 +1,18 @@
+.home__list {
+	list-style: none;
+	display: flex;
+	gap: 30px;
+	color: gray;
+	&-item {
+		font-size: 16px;
+		padding: 2px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: 0.3s ease-in;
+		&:hover {
+			transition: 0.3s ease-out;
+			background-color: lightgray;
+			opacity: 0.8;
+		}
+	}
+}
