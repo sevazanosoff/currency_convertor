@@ -1,8 +1,4 @@
 .select {
-	&__wrapper {
-	}
-	&__blocks {
-	}
 	&__btn {
 		color: black;
 		background: transparent;
@@ -113,6 +109,7 @@
 	box-shadow: 2px 2px 2px lightgray;
 	border-radius: 5px;
 	overflow-y: scroll;
+	cursor: pointer;
 	&-item {
 		display: flex;
 		align-items: center;

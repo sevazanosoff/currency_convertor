@@ -1,6 +1,4 @@
 .home {
-	&__wrapper {
-	}
 	&__main {
 		&-wrapper {
 			max-width: 1280px;
@@ -8,6 +6,7 @@
 			flex-direction: column;
 			margin: 0 auto;
 			align-items: center;
+			padding-bottom: 150px;
 		}
 		&-blocks {
 			display: flex;
@@ -26,6 +25,27 @@
 			font-size: 16px;
 			font-weight: 500;
 		}
+		@media (max-width: 899px) {
+			&-blocks {
+				flex-direction: column;
+				gap: 50px;
+				padding: 15px 30px 50px 30px;
+			}
+		}
+		@media (max-width: 899px) {
+			&-blocks {
+				flex-direction: column;
+				gap: 50px;
+				padding: 25px 15px 50px 15px;
+			}
+		}
+		@media (max-width: 899px) {
+			&-blocks {
+				flex-direction: column;
+				gap: 50px;
+				padding: 25px 15px 50px 15px;
+			}
+		}
 	}
 	&__block {
 		display: flex;
@@ -36,9 +56,10 @@
 			margin-bottom: 50px;
 			margin-top: 25px;
 		}
-	}
-	&__block-select {
-	}
-	&__block-input {
+		@media (max-width: 899px) {
+			&-title {
+				padding-left: 25px;
+			}
+		}
 	}
 }
